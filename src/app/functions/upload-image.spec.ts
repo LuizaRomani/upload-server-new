@@ -4,7 +4,7 @@ import { InvalidFileFormat } from '@/app/functions/errors/invalid-file-format'
 import { uploadImage } from '@/app/functions/upload-image'
 import { db } from '@/infra/db'
 import { schema } from '@/infra/db/schemas'
-import { isLeft, isRight, unwrapEither } from '@/infra/shared/either'
+import { isLeft, isRight, unwrapEither } from '@/shared/either'
 import { eq } from 'drizzle-orm'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 
