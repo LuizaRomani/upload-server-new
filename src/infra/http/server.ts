@@ -6,6 +6,7 @@ import { fastifySwagger } from '@fastify/swagger'
 import { fastifySwaggerUi } from '@fastify/swagger-ui'
 import { fastify } from 'fastify'
 import { hasZodFastifySchemaValidationErrors, serializerCompiler, validatorCompiler } from 'fastify-type-provider-zod'
+import { exportUploadsRoute } from './routes/export-upload'
 import { getUploadRoute } from './routes/get-uploads'
 
 const server = fastify()
@@ -47,6 +48,7 @@ server.register(fastifySwaggerUi, {
 
 server.register(uploadImageRoute)
 server.register(getUploadRoute)
+server.register(exportUploadsRoute)
 
 server.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
   console.log('HTTP Server running!')
